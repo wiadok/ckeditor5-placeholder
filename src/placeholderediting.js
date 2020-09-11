@@ -32,7 +32,7 @@ export default class PlaceholderEditing extends Plugin {
     );
 
     this.editor.config.define("placeholderProps", {
-      types: ["name", "date"],
+      types: ["name", "date"],      
     });
   }
 
@@ -93,7 +93,7 @@ export default class PlaceholderEditing extends Plugin {
         class: "placeholder",
       });
 
-      const innerText = viewWriter.createText("{" + name + "}");
+      const innerText = viewWriter.createText("<%=" + name + "%>");
       viewWriter.insert(
         viewWriter.createPositionAt(placeholderView, 0),
         innerText,
